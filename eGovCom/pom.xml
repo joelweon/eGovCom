@@ -437,7 +437,7 @@
             <version>5.1.31</version>
         </dependency>
 	
-	<dependency>
+	<!-- <dependency>
             <groupId>kr.go.gpki</groupId>
             <artifactId>gpkisecureweb</artifactId>
             <version>1.0.4.9</version>
@@ -451,7 +451,7 @@
             <version>1.4.0.0</version>
             <scope>system</scope>
             <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/libgpkiapi_jni-1.4.0.0.jar</systemPath>
-        </dependency>
+        </dependency> -->
 	</dependencies>
 
 	<build>

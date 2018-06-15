@@ -107,11 +107,6 @@ function goRegiUsr() {
     }
 }
 
-function goGpkiIssu() {
-    document.defaultForm.action="<c:url value='/uat/uia/egovGpkiIssu.do'/>";
-    document.defaultForm.submit();
-}
-
 function setCookie (name, value, expires) {
     document.cookie = name + "=" + escape (value) + "; path=/; expires=" + expires.toGMTString();
 }
@@ -245,17 +240,6 @@ function fnInit() {
                               <tr>
                                 <td height="3"></td>
                               </tr>
-                              <tr>
-                                <td>
-                                    <table border="0" cellspacing="0" cellpadding="0">
-                                      <tr>
-                                        <td><span class="button"><a href="#LINK" onClick="Login(document.GpkiLoginForm);" tabindex="10">인증서로그인</a></span></td>
-                                        <td>&nbsp;</td>
-                                        <td><span class="button"><a href="#LINK" onClick="goGpkiIssu();" tabindex="11">인증서안내</a></span></td>
-                                      </tr>
-                                    </table>
-                                </td>
-                              </tr>
                             </table>
                         </td>
                       </tr>
@@ -271,82 +255,6 @@ function fnInit() {
         </form>
         <!--일반로그인 테이블 끝-->
       </td>
-      <td width="350" height="250">
-
-        <!--인증서로그인 테이블 시작-->
-        <form name="GpkiLoginForm" action ="<c:url value='/uat/uia/actionCrtfctLogin.do'/>" method="post">
-		<div style="visibility:hidden;display:none;">
-		<input name="iptSubmit2" type="submit" value="전송" title="전송">
-		</div>
-            <table width="303" border="0" cellspacing="8" cellpadding="0">
-              <tr>
-                <td width="40%"class="title_left"><img src="<c:url value='/images/egovframework/com/cmm/icon/tit_icon.gif'/>" width="16" height="16" hspace="3" align="middle" alt="gpki_login">&nbsp;인증서 로그인</td>
-              </tr>
-              <tr>
-                <td width="303" height="210" valign="top" style="background:url(<c:url value='/images/egovframework/com/uat/uia/login_bg01.gif'/>) no-repeat;">
-                    <table width="303" border="0" align="center" cellpadding="0" cellspacing="0">
-                      <tr>
-                        <td width="30" height="20"></td>
-                      </tr>
-                      <tr>
-                      	<td>
-	                        <table border="0" cellspacing="0" cellpadding="0" align="center">
-	                          <tr>
-	                          <td>
-	                            <!-- 인증서 ActiveX 삽입 -->
-	                            <object id="EMX" classid="CLSID:4725E26C-87F5-4D06-B743-A645DC6623D9" width = "285" height = "145">
-	                              <param name="GNTYPE"  value=GNCertType>
-	                              <param name="WORKDIR"  value=WorkDir>
-	                              <param name="CERTTYPE"  value=ReadCertType>
-	                              <param name="VALIDCERTOIDINFO"  value=ValidCertInfo>
-	                            </object>
-	                            <!-- 인증서 ActiveX 삽입 끝-->
-	                          </td>
-	                          </tr>
-	                        </table>
-                        </td>
-                      </tr>
-                    </table>
-                   </td>
-                  </tr>
-                  <tr>
-                  	<td>
-                    <table>
-                      <tr>
-                      	<td>
-	                        <table border="0" cellspacing="0" cellpadding="0" align="center">
-	                          <tr>
-	                            <td class="required_text"><label for="pwd">비밀번호&nbsp;&nbsp;
-	                            	<input type="password" size="13" maxlength="16" name="pwd" id="pwd" onkeydown="embeddedEnterEvent(this.form)" style="ime-mode: disabled;" tabindex="12">&nbsp;&nbsp;</label>
-	                            </td>
-	                            <td><span class="button"><a href="#LINK" onClick="LoginEmbedded(document.GpkiLoginForm);" tabindex="13">인증서로그인</a></span>
-	                            </td>
-	                          </tr>
-	                        </table>
-                        </td>
-                      </tr>
-                    </table>
-                </td>
-              </tr>
-            </table>
-            <input name="userSe" type="hidden" value="GNR">
-        </form>
-        <!--인증서로그인 테이블 끝-->
-        <!-- 팝업 폼 -->
-        <form name="defaultForm" action ="<c:url value='/uat/uia/egovGpkiIssu.do'/>" method="post" target="_blank">
-   		<div style="visibility:hidden;display:none;">
-		<input name="iptSubmit3" type="submit" value="전송" title="전송">
-		</div>
-        </form>
-      </td>
-    </tr>
-  </table>
-  <table width="700">
-    <tr>
-      <td class="title_left"><img src="<c:url value='/images/egovframework/com/cmm/icon/tit_icon.gif'/>" width="16" height="16" hspace="3" align="middle" alt="gpki_icon">&nbsp;인증서 로그인을 위한 설치</td>
-    </tr>
-    <tr>
-      <td valign="top" style="height:50px;">&nbsp;-&nbsp;<a href="http://www.gpki.go.kr" target="blank" title="GPKI 인증센터 새창">GPKI 인증센터</a></td>
     </tr>
   </table>
   

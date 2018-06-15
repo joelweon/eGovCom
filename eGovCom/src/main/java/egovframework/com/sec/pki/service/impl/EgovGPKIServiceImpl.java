@@ -1,6 +1,6 @@
 package egovframework.com.sec.pki.service.impl;
 
-import java.util.Enumeration;
+/*import java.util.Enumeration;
 
 import egovframework.com.cmm.service.EgovProperties;
 import egovframework.com.sec.pki.service.EgovGPKIService;
@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.gpki.gpkiapi_jni;
-
+*/
 /**
  * GPKI(Goverment Public Key Infrastructure)를 위한 서비스 구현 클래스
  * @author 공통컴포넌트개발팀 한성곤
@@ -36,16 +36,16 @@ import com.gpki.gpkiapi_jni;
  *
  * </pre>
  */
-@Service("EgovGPKIService")
-public class EgovGPKIServiceImpl extends EgovAbstractServiceImpl implements EgovGPKIService {
-	/** GPKI API JNI */
+/*@Service("EgovGPKIService")*/
+public class EgovGPKIServiceImpl/* extends EgovAbstractServiceImpl implements EgovGPKIService */{
+/*	*//** GPKI API JNI *//*
 	private gpkiapi_jni gpkiAPI = null;
-	/** 속성 파일 정보 */
+	*//** 속성 파일 정보 *//*
 	private String config = null;
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(EgovGPKIServiceImpl.class);
 
-	/*
+	
 	// PostConstruct 사용 시 startup loading으로 인하여 gpkiapi_jni.dll이 없는 경우 servlet loading되지 못함
 	// setup(synchronized) 메소드  사용 방식으로 변경
 	@PostConstruct
@@ -64,7 +64,7 @@ public class EgovGPKIServiceImpl extends EgovAbstractServiceImpl implements Egov
 	//--------------------------------
 	gpkiAPI = new gpkiapi_jni();
 	}
-	*/
+	
 
 	public void setup() {
 		synchronized (this) {
@@ -86,9 +86,9 @@ public class EgovGPKIServiceImpl extends EgovAbstractServiceImpl implements Egov
 		}
 	}
 
-	/**
+	*//**
 	 * 현 서버의 ID를 얻는다.
-	 */
+	 *//*
 	public String getServerId() throws Exception {
 		//-----------------------------------------
 		// @PostConstruct 미사용 방식
@@ -101,13 +101,13 @@ public class EgovGPKIServiceImpl extends EgovAbstractServiceImpl implements Egov
 		return EgovProperties.getProperty(config, "gpki.certificate.server");
 	}
 
-	/**
+	*//**
 	 * LDAP에서 인증서 얻기.
 	 *
 	 * @param code
 	 * @return
 	 * @throws Exception
-	 */
+	 *//*
 	protected byte[] getCertFromLDAP(String code) throws Exception {
 		//-----------------------------------------
 		// @PostConstruct 미사용 방식
@@ -167,11 +167,11 @@ public class EgovGPKIServiceImpl extends EgovAbstractServiceImpl implements Egov
 		return cert;
 	}
 
-	/**
+	*//**
 	 * 데이터 암호화 처리.
 	 *
 	 * @see egovframework.com.sec.pki.service.EgovGPKIService#encrypt(byte[], java.lang.String)
-	 */
+	 *//*
 	public byte[] encrypt(byte[] message, String target) throws Exception {
 		//-----------------------------------------
 		// @PostConstruct 미사용 방식
@@ -209,11 +209,11 @@ public class EgovGPKIServiceImpl extends EgovAbstractServiceImpl implements Egov
 		return encryptedData;
 	}
 
-	/**
+	*//**
 	 * 복호화 처리.
 	 *
 	 * @see egovframework.com.sec.pki.service.EgovGPKIService#decrypt(byte[])
-	 */
+	 *//*
 	public byte[] decrypt(byte[] data) throws Exception {
 		//-----------------------------------------
 		// @PostConstruct 미사용 방식
@@ -271,11 +271,11 @@ public class EgovGPKIServiceImpl extends EgovAbstractServiceImpl implements Egov
 		return plainData;
 	}
 
-	/**
+	*//**
 	 * 전자서명 처리.
 	 *
 	 * @see egovframework.com.sec.pki.service.EgovGPKIService#sign(byte[])
-	 */
+	 *//*
 	public byte[] sign(byte[] message) throws Exception {
 		//-----------------------------------------
 		// @PostConstruct 미사용 방식
@@ -332,11 +332,11 @@ public class EgovGPKIServiceImpl extends EgovAbstractServiceImpl implements Egov
 		return signedData;
 	}
 
-	/**
+	*//**
 	 * 전자서명 검증.
 	 *
 	 * @see egovframework.com.sec.pki.service.EgovGPKIService#verifySign(byte[])
-	 */
+	 *//*
 	public byte[] verifySign(byte[] signedData) throws Exception {
 		//-----------------------------------------
 		// @PostConstruct 미사용 방식
@@ -370,21 +370,21 @@ public class EgovGPKIServiceImpl extends EgovAbstractServiceImpl implements Egov
 		return plainData;
 	}
 
-	/**
+	*//**
 	 * BASE64 encoding 처리.
 	 *
 	 * @see egovframework.com.sec.pki.service.EgovGPKIService#getBASE64String(byte[])
-	 */
+	 *//*
 	public String getBASE64String(byte[] data) throws Exception {
 		return new String(Base64.encodeBase64(data));
 	}
 
-	/**
+	*//**
 	 * BASE64 decoding 처리.
 	 *
 	 * @see egovframework.com.sec.pki.service.EgovGPKIService#getDataFromBASE64(java.lang.String)
-	 */
+	 *//*
 	public byte[] getDataFromBASE64(String base64) throws Exception {
 		return Base64.decodeBase64(base64.getBytes());
 	}
-}
+*/}
